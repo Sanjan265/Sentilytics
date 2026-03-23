@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+praw
+yfinance
+pandas
+numpy
+scikit-learn
+nltk
+python-dotenv
+httpx

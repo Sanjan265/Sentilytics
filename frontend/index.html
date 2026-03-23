@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Sentiment Predictor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Sentilytics</h2>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">Dashboard</a>
+                <a href="#" class="nav-item">Stock Screener</a>
+                <a href="#" class="nav-item">Reddit Trends</a>
+                <a href="#" class="nav-item">Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="search-bar">
+                    <input type="text" id="ticker-input" placeholder="Search for a ticker (e.g. AAPL, TSLA)...">
+                    <button id="search-btn">Analyze</button>
+                </div>
+                <div class="user-profile">
+                    <span class="status-indicator"></span> System Online
+                </div>
+            </header>
+
+            <div class="dashboard">
+                <div class="header-section">
+                    <h1 id="current-ticker">Overview</h1>
+                    <p class="subtitle">AI-driven predictions based on real-time Reddit sentiment.</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>Prediction</h3>
+                        <div class="metric-value indicator-bullish" id="pred-value">--</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Confidence</h3>
+                        <div class="metric-value" id="conf-value">--%</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Sentiment Score</h3>
+                        <div class="metric-value" id="sent-value">--</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Reddit Mentions (24h)</h3>
+                        <div class="metric-value" id="mentions-value">--</div>
+                    </div>
+                </div>
+
+                <div class="charts-section">
+                    <div class="chart-container">
+                        <h3>Sentiment vs Price Trend</h3>
+                        <canvas id="mainChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
